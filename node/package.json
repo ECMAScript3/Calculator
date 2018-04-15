@@ -1,0 +1,28 @@
+{
+  "name": "molecalc",
+  "version": "0.0.1",
+  "description": "Molecular Calculator",
+  "main": "main.js",
+  "dependencies": {
+    "n": "^2.1.8",
+    "three": "^0.91.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron main.js --allow-file-access-from-files &",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ECMAScript3/Calculator.git"
+  },
+  "keywords": [
+    "calculator"
+  ],
+  "author": "Shawn A McAnalley Jr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ECMAScript3/Calculator/issues"
+  },
+  "homepage": "https://github.com/ECMAScript3/Calculator#readme"
+}

@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(./font/MaterialIcons-Regular.woff2) format('woff2'),
+      url(./font/MaterialIcons-Regular.woff) format('woff'),
+      url(./font/MaterialIcons-Regular.ttf) format('truetype');
+  }
+  @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=latin-ext');
+
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5em;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+* {
+    position: fixed;
+    font-family: 'roboto', sans-serif;
+}
+#overlay {
+    width: 67vw;
+    height: calc(67vw * 0.5625);
+    bottom: 0px;
+    right: 0px;
+    z-index: 2;
+}
+#render {
+    width: 67vw;
+    height: calc(67vw * 0.5625);
+    bottom: 0px;
+    right: 0px;
+    z-index: -1;
+    background-color: whitesmoke;
+}
+#sidebar {
+    height: calc(67vw * 0.5625);
+    bottom: 0px;
+    width: 33vw;
+    background-color: #fff;
+    z-index: 8;
+}
+#top {
+    height: calc(100vh - 67vw * 0.5625);
+    width: 100vw;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.56);
+    font-family: 'Roboto', sans-serif;
+}
+#flscn {
+    z-index: inherit;
+    left: 5px;
+    top: 5px;
+    user-select: none;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    color: grey;
+    background-color: white;
+    border-radius: 3px;
+    text-align: center;
+    cursor: default;
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.56);
+}
+#flscn:hover {
+    color: black;
+    transition-duration: 300ms;
+}
