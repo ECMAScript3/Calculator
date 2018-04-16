@@ -12,7 +12,7 @@ function createWindow () {
       width: 800,
       height: 600,
       title: "Chem Calculator",
-      frame: false,
+      //frame: false,
       show: false,
       backgroundColor: "#303030",
       "webPreferences":{
