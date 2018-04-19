@@ -1,4 +1,5 @@
 var THREE = require("../OrbitControls.js")(require("three"));
+var Atom = require("../math/Atom.js");
 module.exports = function() {
     this.continue = true;
     this.starts = (function() {
@@ -8,25 +9,27 @@ module.exports = function() {
             alpha: true,    
             antialias: true
         });
+        
+        this.ren.setPixelRatio( window.devicePixelRatio )
+        this.cam = new THREE.PerspectiveCamera(75, 1920/1080, 1, 10000);
         setTimeout(() => {
+            this.cam.aspect = (this.can.clientWidth/this.can.clientHeight);
             this.ren.setSize(this.can.clientWidth, this.can.clientHeight);
-        }, 500);
+        }, 1000);
         this.can.onresize = () => {
+            this.cam.aspect = (this.can.clientWidth/this.can.clientHeight);
             this.ren.setSize(this.can.clientWidth, this.can.clientHeight);
         };
         this.scn = new THREE.Scene();
-        this.cam = new THREE.PerspectiveCamera(75, 1920/1080, 1, 10000);
+        var lights = [];
+        var light = new THREE.AmbientLight( 0xa0a0a0 );
+		this.scn.add(light);
         this.controls = new THREE.OrbitControls(this.cam, this.can);
         this.cam.position.set(0,20,50);
         this.controls.update();
+        this.ren.setClearColor( 0xf5f5f5, 1 );
 
-        let geometry = new THREE.BoxGeometry(10,10,10);
-        var material = new THREE.MeshBasicMaterial({
-            color: 0xff0000,
-            wireframe: true
-        });
-        this.cube = new THREE.Mesh(geometry, material);
-        this.scn.add(this.cube);
+        this.scn.add((new Atom("H")).model.mesh);
 
         this.cam.position.z = 5;
 
@@ -34,8 +37,6 @@ module.exports = function() {
     }).bind(this);
     this.animate = (function() {
         this.controls.update();
-        this.cube.rotation.x += 0.01;
-        this.cube.rotation.y += 0.01;
         this.ren.render(this.scn, this.cam);
         if (this.continue) requestAnimationFrame(this.animate);
     }).bind(this);

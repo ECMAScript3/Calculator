@@ -21,6 +21,7 @@
             o.style.zIndex = "12";
             r.style.zIndex = "11";
         }
+        r.onresize();
         t = !t;
     });
 
